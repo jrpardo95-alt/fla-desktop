@@ -95,8 +95,7 @@
   "createStartMenuShortcut": true,
   "shortcutName": "FLA Desktop",
   "license": "LICENSE.txt",
-  "language": "Spanish",
+  "language": "3082",
   "deleteAppDataOnUninstall": false
-},
-  }
 }
+
