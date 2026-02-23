@@ -1,0 +1,12 @@
+FLA Desktop — Licencia de uso
+
+Copyright (c) 2024 Felipe Lo Arregla
+
+Este software es para uso personal y comercial del titular de la licencia.
+
+TÉRMINOS:
+- Puede usar esta aplicación para gestionar su negocio.
+- No puede redistribuir ni vender el software.
+- El software se provee "tal cual" sin garantías.
+
+Para soporte, contactar al desarrollador.

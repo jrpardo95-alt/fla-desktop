@@ -1,0 +1,103 @@
+{
+  "name": "fla-desktop",
+  "productName": "FLA Desktop",
+  "version": "1.0.0",
+  "description": "Felipe Lo Arregla — Gestión de servicios técnicos",
+  "main": "electron/main.js",
+  "author": "FLA",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -n VITE,ELECTRON -c cyan,yellow \"npm run dev:vite\" \"npm run dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
+    "build:frontend": "vite build",
+    "build:win": "npm run build:frontend && electron-builder --win --x64",
+    "build:mac": "npm run build:frontend && electron-builder --mac",
+    "build:linux": "npm run build:frontend && electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "cors": "^2.8.5",
+    "electron-log": "^5.1.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.4",
+    "electron-builder": "^24.13.3",
+    "html2pdf.js": "^0.10.1",
+    "vite": "^5.4.2",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "cl.fla.desktop",
+    "productName": "FLA Desktop",
+    "copyright": "Copyright © 2024 FLA",
+    "asar": true,
+    "directories": {
+      "output": "dist-installer",
+      "buildResources": "build-resources"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "server/**/*",
+      "node_modules/**/*",
+      "!node_modules/.cache/**/*",
+      "!**/*.map"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build-resources/icon.ico"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "build-resources/icon.icns",
+      "category": "public.app-category.business"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build-resources/icon.png",
+      "category": "Office"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "FLA Desktop",
+      "license": "LICENSE.txt",
+      "installerLanguages": [
+        "SpanishInternational"
+      ],
+      "language": "3082",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
