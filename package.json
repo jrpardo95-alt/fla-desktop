@@ -87,19 +87,16 @@
       "icon": "build-resources/icon.png",
       "category": "Office"
     },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "FLA Desktop",
-      "license": "LICENSE.txt",
-      "installerLanguages": [
-        "SpanishInternational"
-      ],
-      "language": "3082",
-      "deleteAppDataOnUninstall": false
-    }
+  "nsis": {
+  "oneClick": false,
+  "perMachine": false,
+  "allowToChangeInstallationDirectory": true,
+  "createDesktopShortcut": true,
+  "createStartMenuShortcut": true,
+  "shortcutName": "FLA Desktop",
+  "license": "LICENSE.txt",
+  "language": "Spanish",
+  "deleteAppDataOnUninstall": false
+},
   }
 }
